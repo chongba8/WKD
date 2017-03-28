@@ -1,0 +1,17 @@
+{
+  "name": "wkd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hc",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bxslider": "^4.2.11",
+    "jquery": "^3.2.1",
+    "slick-carousel": "^1.6.0"
+  }
+}

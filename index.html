@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0"/>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="node_modules/slick-carousel/slick/slick.js"></script>
+        <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
+        <style>
+        	.my-container{
+        		width: 80%;
+        		margin: 0 auto;
+        	}
+        	.head-log{
+				height: 150px;
+				background: url('img/log.png') no-repeat 0 0;
+				position: relative;
+        	}
+        	.index-header{
+        		background-color: #151B26;
+        	}
+        	.contact{
+				position: absolute;
+				right: 0;
+				top: 32px;
+
+        	}
+        	.head-log li{
+        		float: left;
+        		width: 76px;
+        		text-align: center;
+        		font: 12px/14px a;
+        		font-weight: 400;
+        		color: #fff;
+        	}
+        	
+        	.login{
+        		position: absolute;
+        		right: 0;
+        		bottom: 18px;
+        	}
+        	.login li:first-child{
+        		border-right: 1px solid #ccc;
+        	}
+        	.index-nav{
+        		background:#2B4375;
+        		border: none;
+        		border-radius: 0;
+        		margin-bottom: 0;
+        	}
+        	.nav-box{
+        		height: 50px;
+        	}
+        	.search{
+        		position: absolute;
+        		right: 10%;
+        		top: 9px;
+        	}
+        	.search-box, .search-btn{
+        		float: left;
+        		height: 32px;
+        		border: none;
+        	}
+        	.search-btn{
+				padding: 0 10px;
+				border: none;
+				line-height: 32px;
+				background: #0B122E;
+				color: #fff;
+				font-size: 12px;
+        	}
+        	.search-box input{
+        		display: block;
+        		height: 32px;
+
+        	}
+        	.index-banner{
+        		height: auto;
+                overflow: hidden;
+                background: #0B0100;
+        	}
+        	.nav li{
+        		width: 100px !important;
+        		text-align: center;
+        	}
+        	.nav li a{
+        		color: #fff !important;
+        	}
+        	.collapse .nav li a:hover{
+        		font-weight: 900;
+                background: #53678F;
+        	}
+        	.slider div{
+            text-align: center;
+          }
+          .slider div img{
+            margin: 0 auto;
+          }
+        .slick-prev{position: absolute;top:-30px;right: 30px;transform: translateY(-50%);z-index: 999;background: rgba(0,0,0,.4);border:none;padding:0 10px;}
+        .slick-next{position: absolute;top: -30px;right: 0;transform: translateY(-50%);z-index: 999;background:rgba(0,0,0,.4);border:none;padding:0 10px;}
+        .precast-title{border-bottom: 1px solid #aaa;margin-bottom: 20px;height: 30px;margin-top: 20px;}
+        .precast-title span{float: left;display: block;margin-left: 10px;font:14px/30px a;font-weight:600;}
+        .precast-desc{margin-top: 10px;font:12px/14px a;overflow: hidden;height: 14px;padding:0 10px;}
+        .match-detail .more-detail{float: right;margin-right: 10px;}
+        .match-detail{width: 60%;}
+        .matches{margin-top: 30px;}
+        .match-detail ul li{padding:10px 0 10px 160px;position: relative;background:url('img/img1.png') no-repeat 0 20px;-webkit-background-size: 160px;
+        background-size: 140px;}
+        .match-detail ul li h2{display: block;overflow: hidden;line-height: 40px;font-size: 14px;font-weight: 500;color:#020202;}
+        .match-detail ul li p{display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3;overflow: hidden;line-height: 20px;text-indent: 2em;}
+        .read-all{display: block;position: absolute;right:10px;bottom:5px ;background: #257187;padding:5px 10px; color: #fff;border-radius: 4px;}
+        .match-date{padding:20px 0;margin-top: 20px;}
+        .match-date span{display: block;float: left;margin-right: 40px;height: 16px;}
+        .match-date span:nth-of-type(2){padding: 0 20px;background: url('img/eye.png') no-repeat 0 5px;-webkit-background-size: 16px 16px;
+        background-size: 16px 10px;}
+
+
+        @media screen and (max-width:800px) {
+                .my-container{
+                 width: 100%;
+                }
+                .search{
+                left: 10px;
+                }
+                .head-log{
+                    height: 95px;
+                    background: url('img/logo-small.png') no-repeat 10px center;
+                    -webkit-background-size: 60px;
+                    background-size: 60px;
+                }
+            .slider img{width: 150px;}
+            .match-detail{width: 100%;}
+            }
+        </style>
+    </head>
+    <body>
+    <header class="index-header">
+    	<div class="my-container">
+    		<div class="head-log">
+    			<ul class="contact">
+    				<li>联系我们</li>
+    				<li>提交资料</li>
+    				<li>切换语言</li>
+    			</ul>
+    			<ul class="login">
+    				<li>登录</li>
+    				<li>注册</li>
+    			</ul>
+    		</div>
+    	</div>
+    </header>
+    <div style="position: relative;">
+	    <nav class="navbar navbar-default index-nav">
+		  <div class="container-fluid my-container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li><a href="#">首 页</a></li>
+		        <li><a href="#">最新资讯</a></li>
+		        <li><a href="#">赛事介绍</a></li>
+		        <li><a href="#">选手信息</a></li>
+		        <li><a href="#">赛事视频</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+	</nav>
+ 			<div class="search">
+		        <div class="search-box">
+		          <input type="text" class="" placeholder="Search">
+		        </div>
+		        <div type="submit" class="search-btn">搜索</div>
+	      </div>
+    </div>
+    <!-- 轮播banner -->
+<div class="index-banner">
+	<div id="carousel-example-generic" class="carousel slide my-container" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="img/banner1.png" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div><div class="item">
+      <img src="img/banner1.png" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div><div class="item">
+      <img src="img/banner1.png" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div><div class="item">
+      <img src="img/banner1.png" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div><div class="item">
+      <img src="img/banner1.png" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+   
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<!-- 赛事预告 -->
+ 		<section class="my-container">
+            <div class="precast-title"><span>赛事预告</span></div>
+ 		   <div  class="slider">
+                <div><a href="http://www.hula8.net/article/30182.html">
+                <img src="img/precast1.jpg" alt="">
+                <div class="precast-desc">2017年3月25日昆仑决59三亚站 - 直播</div>
+                </a></div><div><a href="">
+                <img src="img/precast1.jpg" alt="">
+                <div class="precast-desc">2017年3月25日昆仑决59三亚站 - 直播</div>
+                </a></div><div><a href="">
+                <img src="img/precast1.jpg" alt="">
+                <div class="precast-desc">2017年3月25日昆仑决59三亚站 - 直播</div>
+                </a></div><div><a href="">
+                <img src="img/precast1.jpg" alt="">
+                <div class="precast-desc">2017年3月25日昆仑决59三亚站 - 直播</div>
+                </a></div><div><a href="">
+                <img src="img/precast1.jpg" alt="">
+                <div class="precast-desc">2017年3月25日昆仑决59三亚站 - 直播</div>
+                </a></div><div><a href="">
+                <img src="img/precast1.jpg" alt="">
+                <div class="precast-desc">2017年3月25日昆仑决59三亚站 - 直播</div>
+                </a></div><div><a href="">
+                <img src="img/precast1.jpg" alt="">
+                <div class="precast-desc">2017年3月25日昆仑决59三亚站 - 直播</div>
+                </a></div><div><a href="">
+                <img src="img/precast1.jpg" alt="">
+                <div class="precast-desc">2017年3月25日昆仑决59三亚站 - 直播</div>
+                </a></div>
+            
+           </div>
+ 		</section> 
+ <!-- 赛事详情 -->
+        <section class="my-container matches">
+            <div class="match-detail">
+                <div class="precast-title"><span>赛事速递</span> <span class="more-detail">more</span></div>
+                <ul>
+                    <li>
+                        <h2>2017年2月25日K-1日本初代轻量级冠军赛 - 直播对阵【视频】</h2>
+                        <p>2017年2月25日K-1 WORLD GP 2017日本初代62.5kg轻量级冠军争霸赛将在国立代代木竞技场第二体育馆打响。中国勇士魏锐将参加K-1WORLD GP 2017年初代轻量级62.5kg...</p>
+                        <div class="match-date">
+                            <span>2017年02月09日</span>
+                            <span>1,345</span>
+                        </div>
+                        <span class="read-all">阅读全文</span>
+                    </li> <li>
+                        <h2>2017年2月25日K-1日本初代轻量级冠军赛 - 直播对阵【视频】</h2>
+                        <p>2017年2月25日K-1 WORLD GP 2017日本初代62.5kg轻量级冠军争霸赛将在国立代代木竞技场第二体育馆打响。中国勇士魏锐将参加K-1WORLD GP 2017年初代轻量级62.5kg...</p>
+                        <div class="match-date">
+                            <span>2017年02月09日</span>
+                            <span>1,345</span>
+                        </div>
+                        <span class="read-all">阅读全文</span>
+                    </li> <li>
+                        <h2>2017年2月25日K-1日本初代轻量级冠军赛 - 直播对阵【视频】</h2>
+                        <p>2017年2月25日K-1 WORLD GP 2017日本初代62.5kg轻量级冠军争霸赛将在国立代代木竞技场第二体育馆打响。中国勇士魏锐将参加K-1WORLD GP 2017年初代轻量级62.5kg...</p>
+                        <div class="match-date">
+                            <span>2017年02月09日</span>
+                            <span>1,345</span>
+                        </div>
+                        <span class="read-all">阅读全文</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="more-matches"></div>
+        </section>
+    </body>
+    <script>
+      $(document).ready(function(){
+        $(".slider").slick({
+           
+            // normal options... 
+            infinite: true,
+             slidesToShow: 3,
+             prevArrow:'<button type="button" class="slick-prev"><</button>',
+             nextArrow:'<button type="button" class="slick-next">></button>',
+            // the magic 
+            responsive: [{
+           
+                breakpoint: 1100,
+                settings: {
+                  slidesToShow: 3,
+                }
+           
+              }, {
+           
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                }
+           
+              }, {
+           
+                breakpoint: 300,
+                settings: "unslick" // destroys slick 
+           
+              }]
+          });
+      })
+    </script>
+</html>
